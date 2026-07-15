@@ -10,6 +10,8 @@
 [![SkillHub](https://img.shields.io/badge/SkillHub-omnibot-00A8E0?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAwTDAgNFYxMkw4IDE2TDE2IDEyVjRMOCAwWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://skillhub.cn/skills/omnibot)
 [![ClawHub](https://img.shields.io/badge/ClawHub-omnibot--skills-FF6B35?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxQzQuMTMgMSAxIDQuMTMgMSA4QzEgMTEuODcgNC4xMyAxNSA4IDE1QzExLjg3IDE1IDE1IDExLjg3IDE1IDhDMTUgNC4xMyAxMS44NyAxIDggMVpNOCAzQzkuNjYgMyAxMSA0LjM0IDExIDZDMTEgNy42NiA5LjY2IDkgOCA5QzYuMzQgOSA1IDcuNjYgNSA2QzUgNC4zNCA2LjM0IDMgOCAzWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://clawhub.ai/dennisjcy/skills/omnibot-skills)
 
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Browser--Erweiterung-4285F4?style=flat-square&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+
 **Verbinden Sie KI-Agenten mit einem echten Chromium-Browser.**<br>
 Lesen Sie Seiten. Klicken Sie auf Schaltflächen. Füllen Sie Formulare aus. Navigieren Sie. Extrahieren Sie Inhalte. Sammeln Sie Beweise.<br>
 Alles über einen lokalen Daemon und CLI — keine Headless-Hacks, keine fragilen Selektoren.
@@ -36,6 +38,61 @@ Omnibot überbrückt die Lücke zwischen KI-Agenten und dem echten Web. Es gibt 
 
 Kein Puppeteer. Kein Playwright. Kein Headless-Browser, der vorgibt, echt zu sein.<br>
 **Ein echter Browser. Echte Cookies. Echte Erweiterungen. Echte Benutzer-Sitzungen.**
+
+## 🎬 Video-Demonstrationen
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### WeChat Official Account Analyse
+**Hermes analysiert automatisch WeChat-Backend-Daten & Trends**
+
+[![WeChat-Analyse](https://img.youtube.com/vi/xZ-_0TInCRE/maxresdefault.jpg)](https://youtu.be/xZ-_0TInCRE)
+
+*Der Hermes-Agent meldet sich automatisch am WeChat Official Account-Backend an, extrahiert Benutzerwachstum, Artikel-Lesungen, Benutzerdemografie und erstellt einen vollständigen Datenanalysebericht.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### X (Twitter) KI-Nachrichten-Aggregator
+**Hermes durchsucht X automatisch nach neuesten KI-Nachrichten**
+
+[![X KI-Nachrichten](https://img.youtube.com/vi/PknnOhAE6bI/maxresdefault.jpg)](https://youtu.be/PknnOhAE6bI)
+
+*Der Hermes-Agent durchsucht automatisch X (Twitter), sucht und filtert die neuesten KI-Nachrichten und organisiert sie in einem strukturierten Nachrichten-Briefing.*
+
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### Gerichtsprotokoll-Analyse
+**Hermes sucht und analysiert Mordurteile**
+
+[![Gerichtsanalyse](https://img.youtube.com/vi/PQQNDbzgXgQ/maxresdefault.jpg)](https://youtu.be/PQQNDbzgXgQ)
+
+*Der Hermes-Agent durchsucht Gerichtsakten nach Mordfällen, liest 8 vollständige Falldateien und erstellt einen umfassenden Analysebericht mit Täterprofilen, Motiv-Analyse und Verbrechensmustern.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Toutiao Auto-Publishing
+**Hermes veröffentlicht automatisch Artikel auf Toutiao**
+
+[![Toutiao-Veröffentlichung](https://img.youtube.com/vi/elUxHLp1C4Q/maxresdefault.jpg)](https://youtu.be/elUxHLp1C4Q)
+
+*Der Hermes-Agent meldet sich automatisch bei Toutiao an, füllt Titel und Text aus, fügt Bilder ein, konfiguriert Cover und Werbeeinnahmen, zeigt eine Vorschau und veröffentlicht den Artikel mit einem Klick.*
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+**Weitere Anwendungsfälle warten auf Sie!**
+
+</div>
 
 ## ✨ Funktionen
 

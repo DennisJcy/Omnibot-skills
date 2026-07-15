@@ -10,6 +10,8 @@
 [![SkillHub](https://img.shields.io/badge/SkillHub-omnibot-00A8E0?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAwTDAgNFYxMkw4IDE2TDE2IDEyVjRMOCAwWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://skillhub.cn/skills/omnibot)
 [![ClawHub](https://img.shields.io/badge/ClawHub-omnibot--skills-FF6B35?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxQzQuMTMgMSAxIDQuMTMgMSA4QzEgMTEuODcgNC4xMyAxNSA4IDE1QzExLjg3IDE1IDE1IDExLjg3IDE1IDhDMTUgNC4xMyAxMS44NyAxIDggMVpNOCAzQzkuNjYgMyAxMSA0LjM0IDExIDZDMTEgNy42NiA5LjY2IDkgOCA5QzYuMzQgOSA1IDcuNjYgNSA2QzUgNC4zNCA2LjM0IDMgOCAzWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://clawhub.ai/dennisjcy/skills/omnibot-skills)
 
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Browser%20Extension-4285F4?style=flat-square&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+
 **Connect AI agents to a real Chromium browser.**<br>
 Read pages. Click buttons. Fill forms. Navigate. Extract content. Collect evidence.<br>
 All through a local daemon and CLI — no headless hacks, no fragile selectors.
@@ -36,6 +38,61 @@ Omnibot bridges the gap between AI agents and the real web. It gives agents like
 
 No Puppeteer. No Playwright. No headless browser pretending to be real.<br>
 **A real browser. Real cookies. Real extensions. Real user sessions.**
+
+## 🎬 See It In Action
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### WeChat Official Account Analytics
+**Hermes auto-analyzes WeChat backend data & trends**
+
+[![WeChat Analytics](https://img.youtube.com/vi/xZ-_0TInCRE/maxresdefault.jpg)](https://youtu.be/xZ-_0TInCRE)
+
+*Hermes agent auto-logs into WeChat Official Account backend, extracts user growth, article reads, user demographics, and generates a complete data analysis report.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### X (Twitter) AI News Aggregator
+**Hermes auto-browses X for latest AI news**
+
+[![X AI News](https://img.youtube.com/vi/PknnOhAE6bI/maxresdefault.jpg)](https://youtu.be/PknnOhAE6bI)
+
+*Hermes agent auto-browses X (Twitter), searches and filters the latest AI news, and organizes it into a structured news briefing.*
+
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### Court Document Analysis
+**Hermes searches & analyzes homicide verdicts**
+
+[![Court Analysis](https://img.youtube.com/vi/PQQNDbzgXgQ/maxresdefault.jpg)](https://youtu.be/PQQNDbzgXgQ)
+
+*Hermes agent searches court records for homicide cases, reads 8 full case files, and generates a comprehensive analysis report including offender profiles, motive analysis, and crime patterns.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Toutiao Auto-Publishing
+**Hermes publishes articles to Toutiao**
+
+[![Toutiao Publishing](https://img.youtube.com/vi/elUxHLp1C4Q/maxresdefault.jpg)](https://youtu.be/elUxHLp1C4Q)
+
+*Hermes agent auto-logs into Toutiao, fills in title, body text, inserts images, sets cover and ad revenue, previews and publishes the article with one click.*
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+**More use cases waiting for you to explore!**
+
+</div>
 
 ## ✨ Features
 

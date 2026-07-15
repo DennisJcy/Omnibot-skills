@@ -10,6 +10,8 @@
 [![SkillHub](https://img.shields.io/badge/SkillHub-omnibot-00A8E0?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAwTDAgNFYxMkw4IDE2TDE2IDEyVjRMOCAwWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://skillhub.cn/skills/omnibot)
 [![ClawHub](https://img.shields.io/badge/ClawHub-omnibot--skills-FF6B35?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxQzQuMTMgMSAxIDQuMTMgMSA4QzEgMTEuODcgNC4xMyAxNSA4IDE1QzExLjg3IDE1IDE1IDExLjg3IDE1IDhDMTUgNC4xMyAxMS44NyAxIDggMVpNOCAzQzkuNjYgMyAxMSA0LjM0IDExIDZDMTEgNy42NiA5LjY2IDkgOCA5QzYuMzQgOSA1IDcuNjYgNSA2QzUgNC4zNCA2LjM0IDMgOCAzWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://clawhub.ai/dennisjcy/skills/omnibot-skills)
 
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Extension%20de%20Navigateur-4285F4?style=flat-square&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+
 **Connectez les agents IA à un vrai navigateur Chromium.**<br>
 Lisez des pages. Cliquez sur des boutons. Remplissez des formulaires. Naviguez. Extrayez du contenu. Collectez des preuves.<br>
 Tout via un démon local et une CLI — pas de hacks headless, pas de sélecteurs fragiles.
@@ -36,6 +38,61 @@ Omnibot comble le fossé entre les agents IA et le web réel. Il donne aux agent
 
 Pas de Puppeteer. Pas de Playwright. Pas de navigateur headless qui prétend être réel.<br>
 **Un vrai navigateur. De vrais cookies. De vraies extensions. De vraies sessions utilisateur.**
+
+## 🎬 Démonstrations Vidéo
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### Analyse de Compte Officiel WeChat
+**Hermes analyse automatiquement les données et tendances WeChat**
+
+[![Analyse WeChat](https://img.youtube.com/vi/xZ-_0TInCRE/maxresdefault.jpg)](https://youtu.be/xZ-_0TInCRE)
+
+*L'agent Hermes se connecte automatiquement au backend du Compte Officiel WeChat, extrait la croissance des utilisateurs, les lectures d'articles, la démographie des utilisateurs et génère un rapport d'analyse de données complet.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Agrégateur de Nouvelles IA sur X (Twitter)
+**Hermes parcourt X automatiquement pour les dernières nouvelles IA**
+
+[![Nouvelles IA sur X](https://img.youtube.com/vi/PknnOhAE6bI/maxresdefault.jpg)](https://youtu.be/PknnOhAE6bI)
+
+*L'agent Hermes parcourt automatiquement X (Twitter), recherche et filtre les dernières nouvelles IA, et les organise en un briefing structuré.*
+
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### Analyse de Documents Judiciaires
+**Hermes recherche et analyse des verdicts d'homicides**
+
+[![Analyse Judiciaire](https://img.youtube.com/vi/PQQNDbzgXgQ/maxresdefault.jpg)](https://youtu.be/PQQNDbzgXgQ)
+
+*L'agent Hermes recherche dans les dossiers judiciaires des cas d'homicide, lit 8 dossiers de cas complets et génère un rapport d'analyse complet incluant des profils de délinquants, une analyse des motifs et des schémas de criminalité.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Publication Automatique sur Toutiao
+**Hermes publie automatiquement des articles sur Toutiao**
+
+[![Publication Toutiao](https://img.youtube.com/vi/elUxHLp1C4Q/maxresdefault.jpg)](https://youtu.be/elUxHLp1C4Q)
+
+*L'agent Hermes se connecte automatiquement à Toutiao, remplit le titre, le texte du corps, insère des images, configure la couverture et les revenus publicitaires, prévisualise et publie l'article en un clic.*
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+**Plus de cas d'usage vous attendent !**
+
+</div>
 
 ## ✨ Fonctionnalités
 

@@ -10,6 +10,8 @@
 [![SkillHub](https://img.shields.io/badge/SkillHub-omnibot-00A8E0?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAwTDAgNFYxMkw4IDE2TDE2IDEyVjRMOCAwWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://skillhub.cn/skills/omnibot)
 [![ClawHub](https://img.shields.io/badge/ClawHub-omnibot--skills-FF6B35?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxQzQuMTMgMSAxIDQuMTMgMSA4QzEgMTEuODcgNC4xMyAxNSA4IDE1QzExLjg3IDE1IDE1IDExLjg3IDE1IDhDMTUgNC4xMyAxMS44NyAxIDggMVpNOCAzQzkuNjYgMyAxMSA0LjM0IDExIDZDMTEgNy42NiA5LjY2IDkgOCA5QzYuMzQgOSA1IDcuNjYgNSA2QzUgNC4zNCA2LjM0IDMgOCAzWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://clawhub.ai/dennisjcy/skills/omnibot-skills)
 
+[![Chrome 应用商店](https://img.shields.io/badge/Chrome%20应用商店-浏览器扩展-4285F4?style=flat-square&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+
 **将 AI agent 连接到真实的 Chromium 浏览器。**<br>
 读取页面。点击按钮。填充表单。导航。提取内容。收集证据。<br>
 通过本地守护进程和 CLI 完成一切——无头浏览器？不需要。脆弱的选择器？不需要。
@@ -36,6 +38,61 @@ Omnibot 是 AI Agent 的浏览器基础设施。它让 **Hermes**、**Claude Cod
 
 **不是 Puppeteer。不是 Playwright。不是无头浏览器。**<br>
 **是真实的浏览器。真实的 Cookie。真实的扩展。真实的用户会话。**
+
+## 🎬 实际演示
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### 公众号后台数据自动分析
+**Hermes 分析微信公众号数据及趋势**
+
+[![公众号数据分析](https://img.youtube.com/vi/xZ-_0TInCRE/maxresdefault.jpg)](https://youtu.be/xZ-_0TInCRE)
+
+*Hermes 智能体自动登录微信公众号后台，提取用户增长、文章阅读、用户画像等数据，生成完整的数据分析报告。*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### X 自动化获取前沿 AI 信息
+**Hermes 速览 X 总结最新 AI 资讯**
+
+[![X AI 资讯](https://img.youtube.com/vi/PknnOhAE6bI/maxresdefault.jpg)](https://youtu.be/PknnOhAE6bI)
+
+*Hermes 智能体自动浏览 X（Twitter），搜索和筛选最新 AI 资讯，自动整理成结构化的资讯速览。*
+
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### 裁决文书分析
+**Hermes 检索凶杀案裁决文书并分析共性特征**
+
+[![裁决文书分析](https://img.youtube.com/vi/PQQNDbzgXgQ/maxresdefault.jpg)](https://youtu.be/PQQNDbzgXgQ)
+
+*Hermes 智能体自动在裁判文书网检索凶杀案，精读8份案件全文，生成包含犯罪人画像、动机分析、作案特征的完整共性分析报告。*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### 头条号文章自动发布
+**Hermes 将工作区文章发布到头条号**
+
+[![头条号发布](https://img.youtube.com/vi/elUxHLp1C4Q/maxresdefault.jpg)](https://youtu.be/elUxHLp1C4Q)
+
+*Hermes 智能体自动登录头条号，填写标题、正文并插入配图，设置封面和广告收益，预览后一键发布文章。*
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+**更多应用场景等你探索！**
+
+</div>
 
 ## ✨ 核心功能
 

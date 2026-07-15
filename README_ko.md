@@ -10,6 +10,8 @@
 [![SkillHub](https://img.shields.io/badge/SkillHub-omnibot-00A8E0?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAwTDAgNFYxMkw4IDE2TDE2IDEyVjRMOCAwWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://skillhub.cn/skills/omnibot)
 [![ClawHub](https://img.shields.io/badge/ClawHub-omnibot--skills-FF6B35?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAxQzQuMTMgMSAxIDQuMTMgMSA4QzEgMTEuODcgNC4xMyAxNSA4IDE1QzExLjg3IDE1IDE1IDExLjg3IDE1IDhDMTUgNC4xMyAxMS44NyAxIDggMVpNOCAzQzkuNjYgMyAxMSA0LjM0IDExIDZDMTEgNy42NiA5LjY2IDkgOCA5QzYuMzQgOSA1IDcuNjYgNSA2QzUgNC4zNCA2LjM0IDMgOCAzWiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=)](https://clawhub.ai/dennisjcy/skills/omnibot-skills)
 
+[![Chrome 웹 스토어](https://img.shields.io/badge/Chrome%20웹%20스토어-브라우저%20확장-4285F4?style=flat-square&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+
 **AI 에이전트를 실제 Chromium 브라우저에 연결합니다.**<br>
 페이지를 읽습니다. 버튼을 클릭합니다. 폼을 채웁니다. 탐색합니다. 콘텐츠를 추출합니다. 증거를 수집합니다.<br>
 로컬 데몬과 CLI를 통해 모든 것을 수행합니다 — 헤드리스 해킹 없음, 취약한 선택자 없음.
@@ -36,6 +38,61 @@ Omnibot는 AI 에이전트와 실제 웹 사이의 간격을 해소합니다. **
 
 Puppeteer 없음. Playwright 없음. 실제처럼 가장하는 헤드리스 브라우저 없음.<br>
 **실제 브라우저. 실제 쿠키. 실제 확장 프로그램. 실제 사용자 세션.**
+
+## 🎬 데모 영상
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### WeChat 공식 계정 분석
+**Hermes가 WeChat 백엔드 데이터 및 트렌드를 자동 분석**
+
+[![WeChat 분석](https://img.youtube.com/vi/xZ-_0TInCRE/maxresdefault.jpg)](https://youtu.be/xZ-_0TInCRE)
+
+*Hermes 에이전트가 WeChat 공식 계정 백엔드에 자동 로그인하여 사용자 성장, 기사 조회수, 사용자 통계를 추출하고 완전한 데이터 분석 보고서를 생성합니다.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### X (Twitter) AI 뉴스 수집
+**Hermes가 X에서 최신 AI 뉴스를 자동 수집**
+
+[![X AI 뉴스](https://img.youtube.com/vi/PknnOhAE6bI/maxresdefault.jpg)](https://youtu.be/PknnOhAE6bI)
+
+*Hermes 에이전트가 X (Twitter)를 자동 브라우징하여 최신 AI 뉴스를 검색하고 필터링하며, 구조화된 뉴스 브리핑으로 정리합니다.*
+
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top">
+
+### 법원 문서 분석
+**Hermes가 살인 사건 판결문을 검색 및 분석**
+
+[![법원 분석](https://img.youtube.com/vi/PQQNDbzgXgQ/maxresdefault.jpg)](https://youtu.be/PQQNDbzgXgQ)
+
+*Hermes 에이전트가 법원 기록에서 살인 사건을 검색하고, 8건의 전체 사건 파일을 읽으며, 범죄자 프로필, 동기 분석, 범죄 패턴을 포함한 종합 분석 보고서를 생성합니다.*
+
+</td>
+<td width="50%" align="center" valign="top">
+
+### Toutiao 자동 게시
+**Hermes가 기사를 Toutiao에 자동 게시**
+
+[![Toutiao 게시](https://img.youtube.com/vi/elUxHLp1C4Q/maxresdefault.jpg)](https://youtu.be/elUxHLp1C4Q)
+
+*Hermes 에이전트가 Toutiao에 자동 로그인하여 제목, 본문 텍스트를 입력하고 이미지를 삽입하며, 커버와 광고 수익을 설정하고, 미리보기 후 원클릭으로 기사를 게시합니다.*
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+**더 많은 사용 사례가 여러분을 기다리고 있습니다!**
+
+</div>
 
 ## ✨ 기능
 
