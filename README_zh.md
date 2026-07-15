@@ -16,7 +16,7 @@
 
 [快速开始](#-快速开始) · [工作原理](#-工作原理) · [核心功能](#-核心功能) · [文档](#-文档)
 
-🌐 **[English](./README.md)**
+🌐 **[English](./README.md)** · **[日本語](./README_ja.md)** · **[한국어](./README_ko.md)** · **[Español](./README_es.md)** · **[Français](./README_fr.md)** · **[Deutsch](./README_de.md)**
 
 </div>
 

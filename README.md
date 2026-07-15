@@ -16,7 +16,7 @@ All through a local daemon and CLI — no headless hacks, no fragile selectors.
 
 [Getting Started](#-quick-start) · [How It Works](#-how-it-works) · [Features](#-features) · [Documentation](#-documentation)
 
-🌐 **[中文文档](./README_zh.md)**
+🌐 **[中文](./README_zh.md)** · **[日本語](./README_ja.md)** · **[한국어](./README_ko.md)** · **[Español](./README_es.md)** · **[Français](./README_fr.md)** · **[Deutsch](./README_de.md)**
 
 </div>
 
