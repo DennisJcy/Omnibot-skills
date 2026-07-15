@@ -141,32 +141,61 @@ No Puppeteer. No Playwright. No headless browser pretending to be real.<br>
 
 ## ⚡ Quick Start
 
-### 1. Install Omnibot
+### 1. Install the CLI
+
+Install Omnibot CLI globally via npm (recommended):
 
 ```bash
-pip install omnibot
+npm install -g @omniaibot/omnibot
 ```
 
-### 2. Start the daemon
+It auto-detects your platform and installs the corresponding binary. After installation, run `omnibot doctor` to verify.
 
-```bash
-omnibot daemon run
-```
+### 2. Load the Browser Extension
 
-### 3. Load the Chromium extension
+- Open the [Omnibot extension page on Chrome Web Store](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+- Click **Add to Chrome** and complete the installation
+- Click the Omnibot extension icon in the top-right corner of your browser
+- Confirm the extension shows **Connected**, or copy the machine code from the popup to purchase an activation code
 
-Open Chrome or Edge with the Omnibot extension installed. Keep at least one HTTP/HTTPS tab open.
+By default, the extension connects to the local WebSocket service at `127.0.0.1:18765`.
 
-### 4. Verify the connection
+Extension popup settings:
+- **WebSocket Address**: `ws://127.0.0.1:18765`
+- Connection status auto-refreshes
+- If connection fails, run `omnibot doctor` first to check daemon status
+
+### 3. Verify the Connection
+
+No need to manually start the daemon. Running any browser command will auto-start the local daemon, and the browser extension will connect via WebSocket to `127.0.0.1:18765`.
 
 ```bash
 omnibot doctor
 omnibot tabs
 ```
 
-### 5. Give your agent the skill
+`doctor` checks daemon and extension health. `tabs` lists available browser tabs.
 
-Drop [`SKILL.md`](./SKILL.md) into your agent's skill directory. That's it — your agent now has browser superpowers.
+If `doctor` shows the extension is not connected, open Chrome/Edge, load or reload the browser extension, and keep at least one HTTP/HTTPS tab open.
+
+### 4. Install Agent Skills
+
+Omnibot v2 uses skills instead of MCP prompt injection:
+
+```bash
+omnibot skills install --agent hermes --profile nuwa
+omnibot skills install --agent opencode
+omnibot skills install --agent claude
+omnibot skills install --agent codex
+```
+
+View built-in skill paths:
+
+```bash
+omnibot skills path
+```
+
+Omnibot comes with built-in skill configurations for popular AI agents. Select your agent from the quick start page to get the install command.
 
 ## 🔄 How It Works
 

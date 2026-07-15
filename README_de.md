@@ -141,32 +141,61 @@ Kein Puppeteer. Kein Playwright. Kein Headless-Browser, der vorgibt, echt zu sei
 
 ## ⚡ Schnellstart
 
-### 1. Omnibot installieren
+### 1. CLI installieren
+
+Installieren Sie Omnibot CLI global über npm (empfohlen):
 
 ```bash
-pip install omnibot
+npm install -g @omniaibot/omnibot
 ```
 
-### 2. Daemon starten
+Es erkennt automatisch Ihre Plattform und installiert die entsprechende Binärdatei. Führen Sie nach der Installation `omnibot doctor` aus, um die Installation zu überprüfen.
 
-```bash
-omnibot daemon run
-```
+### 2. Browser-Erweiterung laden
 
-### 3. Chromium-Erweiterung laden
+- Öffnen Sie die [Omnibot-Erweiterungsseite im Chrome Web Store](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+- Klicken Sie auf **Zu Chrome hinzufügen** und schließen Sie die Installation ab
+- Klicken Sie auf das Omnibot-Erweiterungssymbol in der oberen rechten Ecke Ihres Browsers
+- Bestätigen Sie, dass die Erweiterung **Verbunden** anzeigt, oder kopieren Sie den Maschinencode aus dem Popup, um einen Aktivierungscode zu kaufen
 
-Öffnen Sie Chrome oder Edge mit der installierten Omnibot-Erweiterung. Halten Sie mindestens einen HTTP/HTTPS-Tab offen.
+Standardmäßig verbindet sich die Erweiterung mit dem lokalen WebSocket-Dienst unter `127.0.0.1:18765`.
 
-### 4. Verbindung überprüfen
+Erweiterungs-Popup-Einstellungen:
+- **WebSocket-Adresse**: `ws://127.0.0.1:18765`
+- Der Verbindungsstatus wird automatisch aktualisiert
+- Wenn die Verbindung fehlschlägt, führen Sie zuerst `omnibot doctor` aus, um den Daemon-Status zu überprüfen
+
+### 3. Verbindung überprüfen
+
+Sie müssen den Daemon nicht manuell starten. Beim Ausführen eines beliebigen Browser-Befehls startet die omnibot CLI automatisch den lokalen Daemon, und die Browser-Erweiterung verbindet sich über WebSocket mit `127.0.0.1:18765`.
 
 ```bash
 omnibot doctor
 omnibot tabs
 ```
 
-### 5. Ihrem Agenten die Fähigkeit geben
+`doctor` überprüft den Daemon- und Erweiterungsstatus. `tabs` listet die verfügbaren Browser-Tabs auf.
 
-Legen Sie [`SKILL.md`](./SKILL.md) in das Skill-Verzeichnis Ihres Agenten. Das war's — Ihr Agent hat jetzt Browser-Superkräfte.
+Wenn `doctor` anzeigt, dass die Erweiterung nicht verbunden ist, öffnen Sie Chrome/Edge, laden oder laden Sie die Browser-Erweiterung neu, und halten Sie mindestens einen HTTP/HTTPS-Tab offen.
+
+### 4. Agent-Skills installieren
+
+Omnibot v2 verwendet Skills anstelle von MCP-Prompt-Injektion:
+
+```bash
+omnibot skills install --agent hermes --profile nuwa
+omnibot skills install --agent opencode
+omnibot skills install --agent claude
+omnibot skills install --agent codex
+```
+
+Integrierte Skill-Pfade anzeigen:
+
+```bash
+omnibot skills path
+```
+
+Omnibot kommt mit integrierten Skill-Konfigurationen für beliebte KI-Agenten. Wählen Sie Ihren Agenten von der Schnellstartseite aus, um den Installationsbefehl zu erhalten.
 
 ## 🔄 Wie Es Funktioniert
 

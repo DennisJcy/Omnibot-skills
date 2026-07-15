@@ -141,32 +141,61 @@ Omnibot 是 AI Agent 的浏览器基础设施。它让 **Hermes**、**Claude Cod
 
 ## ⚡ 快速开始
 
-### 1. 安装 Omnibot
+### 1. 安装 CLI
+
+通过 npm 全局安装 Omnibot CLI（推荐）：
 
 ```bash
-pip install omnibot
+npm install -g @omniaibot/omnibot
 ```
 
-### 2. 启动守护进程
+自动检测平台并安装对应的二进制文件。安装后运行 `omnibot doctor` 验证安装。
 
-```bash
-omnibot daemon run
-```
+### 2. 加载浏览器扩展
 
-### 3. 加载 Chromium 扩展
+- 打开 [Chrome Web Store 中的 Omnibot 扩展页面](https://chromewebstore.google.com/detail/fojlpefamkmjbboafmjkkaejohagbdgn)
+- 点击「添加至 Chrome」并完成安装
+- 安装后点击浏览器右上角的 Omnibot 扩展图标
+- 确认扩展显示**已连接**，或复制弹窗中的机器码用于购买激活码
 
-打开 Chrome 或 Edge，安装 Omnibot 扩展。保持至少一个 HTTP/HTTPS 标签页打开。
+默认情况下，扩展会连接本地 WebSocket 服务 `127.0.0.1:18765`。
 
-### 4. 验证连接
+扩展弹窗配置：
+- **WebSocket 地址**：`ws://127.0.0.1:18765`
+- 连接状态会自动刷新
+- 如果连接失败，先运行 `omnibot doctor` 检查守护进程状态
+
+### 3. 检查连接
+
+不需要手动启动守护进程。直接运行任意浏览器命令时，omnibot CLI 会自动启动本地守护进程，浏览器扩展会通过 WebSocket 连接到 `127.0.0.1:18765`。
 
 ```bash
 omnibot doctor
 omnibot tabs
 ```
 
-### 5. 给你的 agent 提供 skill
+`doctor` 检查守护进程和扩展状态。`tabs` 列出可用的浏览器标签页。
 
-将 [`SKILL.md`](./SKILL.md) 放入你的 agent 的 skill 目录。完成——你的 agent 现在拥有浏览器超能力。
+如果 `doctor` 显示扩展未连接，请打开 Chrome/Edge，加载或重新加载浏览器扩展，并保持至少一个 HTTP/HTTPS 标签页打开。
+
+### 4. 安装 Agent 技能
+
+Omnibot v2 通过技能替代 MCP 提示词注入：
+
+```bash
+omnibot skills install --agent hermes --profile nuwa
+omnibot skills install --agent opencode
+omnibot skills install --agent claude
+omnibot skills install --agent codex
+```
+
+查看内置技能路径：
+
+```bash
+omnibot skills path
+```
+
+Omnibot 内置了流行 AI Agent 的技能配置。从快速开始页面选择你的 Agent 即可获取安装命令。
 
 ## 🔄 工作原理
 
