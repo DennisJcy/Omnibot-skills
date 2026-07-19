@@ -2,7 +2,7 @@
 name: omnibot
 slug: omnibot
 displayName: omnibot-智能体浏览器自动化工具
-version: "2.4.0"
+version: "2.4.1"
 summary: 为 AI Agent 提供浏览器基础设施，连接真实 Chromium 浏览器进行页面读取、操作、导航和调试。
 license: MIT
 description: Use when AI agents need to read, inspect, operate, navigate, debug, or verify browser state through the omnibot CLI and connected Chromium extension.
