@@ -32,6 +32,7 @@
 | Unsafe checkout capture | Clicking through all checkout controls until an order is placed is irreversible and may charge the user. | Capture only the transition into confirmation/preview pages, stop before final submit/pay/place-order controls, and report only non-sensitive request metadata. |
 | Revealing sensitive network data | Cookies, auth headers, full addresses, phone numbers, and payment data must not be pasted into reports. | Report host, path, method, status, and non-sensitive payload shape only. |
 | Using stale `@eN` refs after a failed click | Refs may have expired or the page may have changed. | Re-observe with `snapshot -i` or use a higher-evidence fallback. |
+| Manually scrolling a known ref before every click | It adds an unnecessary mutation, can invalidate refs, and may scroll the wrong nested container. | Click the semantic target or `@eN` directly; Omnibot atomically scrolls, reboxes, hit-tests, and clicks live DOM targets. Manually scroll only to discover virtualized or lazy-rendered content that is not yet in the snapshot. |
 | `Network.enable` without log retrieval | Raw `cdp` calls are one-shot and do not persist events for later reading. | Use `network clear -> network start -> one action -> network stop -> network logs/summary`. |
 | Writing the article body into the title field | Rich text article body editors are often missing from the AX tree; filling the only visible `[textbox]` (title) overwrites the wrong control. | Run `snapshot -i`, find the body under `# DOM Rich Text Editors` as `@eN [richtext]`, then `fill @richtext "..."`. |
 | `execute-js` for rich text body before `fill @richtext` | ContentEditable writes need event dispatch and framework integration; ad-hoc `innerHTML` bypasses Omnibot's supported path. | Use `fill @richtext "p1\n\np2"` or `type @richtext " text"` first. |
@@ -49,6 +50,7 @@ Do not manually reopen a dropdown just to discover options if `snapshot -i` alre
 - "Clicking with JS is equivalent to a user click."
 - "Scrolling with JS is harmless."
 - "The ref probably still points to the same element."
+- "The target is off-screen, so I must manually scroll before clicking its ref."
 - "A screenshot is enough even though I need text."
 - "Sleep should be fine."
 - "The trigger clicked, so another `find text` should eventually select the option."

@@ -103,6 +103,10 @@ OMNIBOT_SESSION_TOKEN=checkout omnibot get url --tab-id <TAB_ID>
 OMNIBOT_SESSION_TOKEN=checkout omnibot is visible ".success" --tab-id <TAB_ID>
 ```
 
+`find ... --action click`, `click @eN`, and selector clicks own target preparation. For a ref backed by a live DOM node, Omnibot scrolls the correct page or nested scroll container, waits for stable geometry, reacquires the click box, and performs a pointer hit-test before dispatching the click. Do not manually scroll a known target merely because its snapshot box is outside the current viewport.
+
+When returned, `auto_scrolled`, `before_box`, `clicked_box`, and `hit_test` are click evidence. `auto_scrolled=true` means target preparation changed its viewport geometry; `hit_test=true` means the final point was verified to receive pointer events.
+
 ### Fallback entry point
 
 If semantic and refs fail, document why and continue at `fallback-operations.md#selector-fallback`.
@@ -254,6 +258,8 @@ If native select/check fails, use `fallback-operations.md#selector-fallback`. Us
 
 Use Scroll when content, controls, lazy-loaded lists, dropdown panels, or editor areas are off-screen.
 
+Do not use Scroll as a mandatory pre-step for a target that is already represented by a semantic locator, selector, or `@eN` ref. Normal click preparation scrolls that known live target atomically. Use explicit scrolling to discover content that is not yet present in the DOM/snapshot, or when the task itself is scrolling rather than clicking.
+
 ### Preferred sequence
 
 1. `scroll down|up|left|right <pixels>` for page scroll.
@@ -262,6 +268,8 @@ Use Scroll when content, controls, lazy-loaded lists, dropdown panels, or editor
 4. `dom scroll` when visible DOM node fallback is needed.
 5. `mouse scroll` only when element/container scroll commands fail.
 6. `execute-js` scroll only after the native tiers fail.
+
+For virtualized lists, infinite feeds, or lazy-rendered content where the target does not exist yet, scroll the relevant container by about 70% of its visible height, take a fresh snapshot, and stop as soon as the target appears. Keep this loop bounded. Once discovered, click the new target normally and let click preparation handle final positioning and hit-testing.
 
 ### Example
 

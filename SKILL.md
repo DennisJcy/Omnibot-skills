@@ -1,11 +1,13 @@
 ---
 name: omnibot
+slug: omnibot
+displayName: omnibot-智能体浏览器自动化工具
+version: "2.4.0"
+summary: 为 AI Agent 提供浏览器基础设施，连接真实 Chromium 浏览器进行页面读取、操作、导航和调试。
+license: MIT
 description: Use when AI agents need to read, inspect, operate, navigate, debug, or verify browser state through the omnibot CLI and connected Chromium extension.
 compatibility: Requires omnibot v2 CLI daemon and the omnibot Chromium extension connected to 127.0.0.1:18765.
 allowed-tools: Bash
-metadata:
-  author: omnibot
-  version: "2.4.0"
 ---
 
 # Omnibot
@@ -38,6 +40,8 @@ This skill is an execution specification for agents. It is not a human command m
 - For workflows with more than five meaningful browser actions, split the work into multiple bounded turns. Each turn should finish its own observe -> act -> verify cycle and report the retained tab id before the next turn; do not put a long mutation chain and all final checks into one model request.
 - Raw `cdp` calls are one-shot. Do not assume `Network.enable` alone creates readable logs. For API/request evidence, use `network clear -> network start -> one action -> network stop -> network logs/summary`.
 - After a failed click by ref, re-observe or use a higher-evidence fallback. Do not keep using stale `@eN` refs from a previous snapshot.
+- Semantic and ref clicks automatically re-resolve the live target, scroll it into view, wait for stable geometry, and verify that it receives pointer events before clicking. Do not manually scroll merely because a known target's snapshot box is off-screen.
+- Manually scroll before target discovery only when the target is not yet represented in the DOM/snapshot, such as virtualized lists, infinite feeds, collapsed regions, or lazy-rendered content. After it appears, use a normal atomic click rather than coordinate clicking.
 - For shopping, checkout, payment, banking, or irreversible workflows: Do not click final submit/pay/place-order controls unless the user explicitly confirms that final action in the current turn.
 - Prefer condition-based `wait` over shell sleep.
 - Timeout values for commands that expose a timeout option, such as `wait`, are seconds, not milliseconds. Use `--timeout 5` for a five-second wait; never convert milliseconds into a raw CLI timeout value. `dialog logs` and `dialog clear` do not accept `--timeout`.
@@ -45,30 +49,19 @@ This skill is an execution specification for agents. It is not a human command m
 - Parse JSON output from commands that return JSON.
 - Do not claim success without verification evidence.
 
-### Runtime Provenance
+### Runtime
 
-Before an agent-driven test in a source checkout, verify the command provenance:
+Use the installed `omnibot` command that is available to the user. Before an
+agent-driven browser workflow, verify that the CLI is available and inspect the
+relevant command help when needed:
 
 ```bash
 command -v omnibot
 omnibot --version
 ```
 
-If the current workspace contains `pyproject.toml` and the global command is not the workspace version, run the test commands as `uv run omnibot ...` (or use the workspace `.venv/bin/omnibot`) so the agent exercises the code under test. Do not infer command support from memory or from a different packaged version; run the relevant subcommand `--help` after selecting the runtime.
-
-For a source-checkout test, make this concrete before the first browser action:
-define the command prefix once:
-
-```bash
-export OMNIBOT="uv run omnibot --no-start"
-```
-
-stop any existing daemon, start the workspace daemon with
-`uv run python -m omnibot --api-port 18764 --ws-port 18765 daemon run`, and
-invoke every subsequent CLI command as `$OMNIBOT ...` (or the
-workspace `.venv/bin/omnibot --no-start ...`). Never use bare `omnibot` in that
-workflow, because it can auto-start the globally installed packaged daemon and
-silently test different code.
+The CLI manages its local daemon automatically. Do not depend on a source
+checkout, Python environment, repository files, or developer-only commands.
 
 ## Native Command Router
 
@@ -200,6 +193,8 @@ OMNIBOT_SESSION_TOKEN=checkout omnibot get url --tab-id <TAB_ID>
 ```
 
 If verification fails, do not repeat blindly. Re-observe, choose the next fallback tier, and verify again.
+
+Click refs are live-node actions, not cached-coordinate actions. A successful `click @eN` may report `auto_scrolled`, `before_box`, `clicked_box`, and `hit_test`; use those fields as evidence that an off-screen or nested-container target was brought into the viewport safely. Do not insert a manual `scroll -> snapshot` sequence between selecting a known ref and clicking it.
 
 ## Pattern > Command
 
