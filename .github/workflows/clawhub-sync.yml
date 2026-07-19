@@ -1,0 +1,71 @@
+name: Sync to ClawHub
+
+# 每次推送到 master 时，自动把变更后的 skills 发布到 ClawHub。
+# 官方推荐用 clawhub sync --all 扫描本地 skills 并发布新增或变更的版本，
+# 这样无需每次手动运行 clawhub skill publish。
+#
+# 前置条件：
+#   - 仓库 Settings → Secrets and variables → Actions 中配置 CLAWHUB_TOKEN
+#     （ClawHub Settings → API tokens 生成的 token）
+#   - 仓库默认分支为 master
+#
+# 认证说明：
+#   clawhub CLI 不支持 CLAWHUB_TOKEN 环境变量直接认证，必须先
+#   `clawhub login --token <token>` 把 token 写入全局 config，再执行 sync。
+#
+# slug 说明：
+#   clawhub sync 用扫描根目录名作为 slug（规范化为小写连字符）。
+#   本仓库 clone 后根目录为 Omnibot-skills → slug = omnibot-skills，
+#   与 ClawHub 上已发布的 @dennisjcy/omnibot-skills 一致。
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clawhub-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ClawHub CLI
+        run: npm install -g clawhub@0.23.1
+
+      - name: Login to ClawHub
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: clawhub login --token "$CLAWHUB_TOKEN" --no-browser
+
+      - name: Sync skills to ClawHub
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: |
+          clawhub sync \
+            --root . \
+            --all \
+            --owner dennisjcy \
+            --source-repo "DennisJcy/Omnibot-skills" \
+            --source-commit "$GITHUB_SHA" \
+            --source-ref "$GITHUB_REF" \
+            --bump patch \
+            --no-input
+
+      - name: Verify
+        if: always()
+        run: clawhub inspect dennisjcy/omnibot-skills || true
