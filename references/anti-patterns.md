@@ -7,6 +7,7 @@
 | `execute-js` first | JavaScript bypasses standard browser interaction and hides better evidence. | Try semantic find, snapshot refs, selectors, DOM, and mouse first. For CSS-only dropdowns, use JavaScript only after the trigger clicked, options remain absent from `snapshot -i`, and higher tiers cannot complete open-then-select. |
 | JS page detection (`document.title`, `location.href`) | It teaches agents to treat scripts as normal reads. | Use `get title` and `get url`. |
 | JS text extraction (`document.body.innerText`) | It bypasses `read` cleanup, lazy-page handling, and targeted evidence. | Use `read --screens N` or `get text`. |
+| Using `document.body.innerText` because a JSF page's first body is empty | Legacy pages may contain multiple bodies; the first can be an autocomplete shell while the content-rich body holds the form or table. | Keep the selected frame and use `read`; target exact refs/ids for narrow evidence. |
 | JS click shortcut (`querySelector(...).click()`) | It can bypass pointer events, overlays, disabled state, and framework/user-intent safety checks. | Use `find ... --action click`, `snapshot -i` + `click @eN`, then selector/DOM/mouse fallback. |
 | JS scroll shortcut (`window.scrollTo`, `scrollIntoView`) | It hides whether the scroll target/container is correct and bypasses Omnibot's action evidence path. | Use `scroll`, `scrollintoview`, `dom scroll`, or `mouse scroll`. |
 | JS value or richtext writes | App frameworks may ignore value/HTML mutation without trusted events and editor integration. | Use `fill`, `type`, `press`, `keyboard`, and `[richtext]` refs. |
@@ -16,6 +17,7 @@
 | Acting without verify | Command success is not task success. | Run `snapshot`, `get`, `is`, or `wait` after every action. |
 | Claiming success without evidence | The browser may not have changed as expected. | Cite verified URL, text, element state, screenshot, console, or network evidence. |
 | Raw CSS before semantic find | CSS is more brittle and less tied to user intent. | Start with `find role/text/label/placeholder/testid`. |
+| Replacing an unnamed password ref with CSS immediately | Snapshot distinguishes `[type=password]`, and the ref binds the exact live input even when AX names are blank. | Use `fill @password-ref`, verify without exposing the secret, then use `input[type=password]` only as fallback. |
 | Screenshot when text extraction is enough | Screenshots cost more and are harder to parse. | Use `read` for page content or `get text` for a selector. |
 | Using `read` before an action workflow | `read` returns text, not stable action targets. | Use `find`, `snapshot -i`, `get`, or `is` for click/fill/verify workflows. |
 | Headless expecting existing user login | Headless does not automatically share the user's visible browser session. | Use visible/background mode for existing login or explicitly log in headless. |
@@ -24,6 +26,7 @@
 | Not checking doctor/tabs before troubleshooting | You may debug page logic when the runtime is disconnected. | Run `omnibot doctor` and `omnibot tabs` first. |
 | Using `tabs[0]` or the first tab | The first tab is often a user tab or the transport tab, not the workflow target. | Create or identify the intended tab and store its full id. |
 | Treating transport as target | Extension routing may use a different tab than the page being acted on. | Always pass `--tab-id <TAB_ID>` and verify with `get url --tab-id <TAB_ID>`. |
+| Treating `frame` as a relative push into the current iframe | Frame targets are absolute for the tab, so a generic target can resolve the wrong ancestor. | Inspect the nested iframe `src`, target a unique descendant substring, and re-run `snapshot -i`. |
 | Closing discovered user tabs | Cleanup can destroy the user's real work. | Track only tool-created tabs and close only those ids. |
 | Leaving worker-token tabs untracked | Cross-token test tabs can remain open or auto-close later. | Add every worker-created tab id to cleanup tracking. |
 | Manually reopening every combobox after snapshot | `snapshot -i` may already include auto-probed option refs; reopening all dropdowns wastes time and can change focus/state. | If `[option]` refs are present, click the option ref and verify. |

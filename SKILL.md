@@ -35,6 +35,8 @@ This skill is an execution specification for agents. It is not a human command m
 - Run `omnibot <command> --help` before using uncommon or newly introduced commands, especially `batch`, `network`, `cdp`, `record`, `trace`, and `skills`.
 - If a command from memory fails with parser errors, stop using that remembered syntax and re-check `omnibot --help` plus the subcommand help.
 - Prefer semantic locators and `snapshot -i` refs before selectors.
+- Treat snapshot refs as exact live targets even when AX names are blank. A password input is annotated as `[textbox] [type=password]`; use its ref before falling back to `input[type=password]`, and never expose the secret merely to prove the fill.
+- Treat `frame` targets as tab-wide absolute descriptors. A unique id/name/title/src substring can resolve a nested descendant frame; when a selected frame snapshot contains another `[Iframe]`, inspect its `src`, target that unique substring, and re-snapshot. `frame main` is the reserved return-to-host command, not a selector for `id="main"`.
 - When the user has explicitly requested a native Omnibot command and the terminal tool is available, execute it immediately; do not ask for confirmation or claim that it was not run. If dispatch genuinely fails, report the concrete tool error after one bounded retry and do not fabricate browser results.
 - A multi-step browser task is incomplete until its requested final verification command has actually run. After the last mutation, always issue the concrete `get`/`is`/`wait` verification, inspect its result, and only then report completion; never stop after reporting that the mutation itself succeeded.
 - For workflows with more than five meaningful browser actions, split the work into multiple bounded turns. Each turn should finish its own observe -> act -> verify cycle and report the retained tab id before the next turn; do not put a long mutation chain and all final checks into one model request.
@@ -307,6 +309,8 @@ Before `execute-js`, the agent must have native-attempt evidence: the exact `fin
 Debugging is for evidence. Fallback is for completing operations.
 
 Use screenshots, annotated screenshots, console logs, network logs, trace, record/replay, and CDP inspection to explain failures or prove state. Do not treat `execute-js` as ordinary debug output.
+
+For a cursor that reappears at an old click point, collect `browser mouse-visual-state --tab-id <TAB_ID>` and a screenshot before retrying the click. The visual cursor is diagnostic overlay state; its position alone does not prove that the old element was clicked again.
 
 ## Absolute Prohibitions
 

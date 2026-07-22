@@ -518,10 +518,13 @@ Purpose: Manage windows and frames.
 OMNIBOT_SESSION_TOKEN=research omnibot window new
 OMNIBOT_SESSION_TOKEN=research omnibot frame "#payment-frame" --tab-id <TAB_ID>
 OMNIBOT_SESSION_TOKEN=research omnibot snapshot -i --tab-id <TAB_ID>
+OMNIBOT_SESSION_TOKEN=research omnibot get attr @e12 src --tab-id <TAB_ID>
+OMNIBOT_SESSION_TOKEN=research omnibot frame "entity.jsf?" --tab-id <TAB_ID>
+OMNIBOT_SESSION_TOKEN=research omnibot snapshot -i --tab-id <TAB_ID>
 OMNIBOT_SESSION_TOKEN=research omnibot frame main --tab-id <TAB_ID>
 ```
 
-`frame` targets an iframe by id, name, title, or matching source URL. Set it before child-frame page-state commands and use `frame main` before reading host-page state.
+`frame` targets an iframe by id, name, title, or matching source URL. Targets are absolute for the tab and matching recursively covers nested descendant frames; use a unique source substring when a selected child snapshot exposes another `[Iframe]`. `frame iframe` usually selects the first match. Use `frame main` before reading host-page state; `main` is a reserved host alias and does not select an iframe with `id="main"`.
 
 ## Waiting & Batch
 

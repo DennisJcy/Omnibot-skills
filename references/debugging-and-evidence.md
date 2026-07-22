@@ -17,6 +17,17 @@ OMNIBOT_SESSION_TOKEN=debug-checkout omnibot screenshot --annotate --tab-id <TAB
 
 Prefer text extraction when text is enough. Screenshot is evidence, not extraction.
 
+## Mouse Visual State
+
+Use the read-only mouse bridge diagnostic plus a screenshot when the visible Omnibot cursor is missing, stale, or appears again at an older click point:
+
+```bash
+OMNIBOT_SESSION_TOKEN=debug-cursor omnibot browser mouse-visual-state --tab-id <TAB_ID>
+OMNIBOT_SESSION_TOKEN=debug-cursor omnibot screenshot --tab-id <TAB_ID> -o /tmp/omni-cursor.png
+```
+
+Check `host`, `shadowRoot`, `pointer`, `assetComplete`, and `pointerOpacity`. Do not infer that the page received another click from the overlay position alone. Verify the page with `get`, `snapshot`, or a business-state condition before retrying any mutation.
+
 ## Console
 
 Use console logs for runtime JavaScript errors, frontend warnings, or app-level diagnostics.

@@ -47,6 +47,8 @@ OMNIBOT_SESSION_TOKEN=research omnibot get url --tab-id <TAB_ID>
 
 Do not use `execute-js "return document.title + location.href"` or `execute-js "return document.body.innerText"` for normal page detection or text extraction. Use `get` or `read`; they are the native evidence path.
 
+Legacy Java/JSF pages may contain multiple `body` elements or several layout tables before the business table. `read` selects the content-rich body; do not replace it with `document.body.innerText` merely because the first body is empty. A broad `get html "table"` returns the first match, so use a table ref from `snapshot -i` or a unique table id when the page contains layout tables.
+
 ### Verification
 
 Use the narrowest read that proves the claim:
@@ -150,6 +152,17 @@ OMNIBOT_SESSION_TOKEN=checkout omnibot snapshot -i --tab-id <TAB_ID>
 OMNIBOT_SESSION_TOKEN=checkout omnibot fill --tab-id <TAB_ID> @e2 "a@b.com"
 OMNIBOT_SESSION_TOKEN=checkout omnibot get value "input[name=email]" --tab-id <TAB_ID>
 ```
+
+### Password and blank-name textboxes
+
+`snapshot -i` annotates native input types, for example:
+
+```text
+@e1 [textbox] [type=text]
+@e2 [textbox] [type=password]
+```
+
+Use `fill @e2 "<secret>"` even when both AX names are blank. The ref is bound to the exact live input; do not assume that two unnamed textbox roles require a CSS selector. Verify the target type/focus or a non-secret success condition, and do not print the password with `get value` or repeat it in the report. Use `input[type=password]` only as the selector fallback after the ref path fails.
 
 ### Rich text article body
 
@@ -335,8 +348,11 @@ Iframe workflow:
 1. Verify the host tab URL and snapshot first.
 2. Set the frame target explicitly, for example `frame #payment-frame --tab-id <TAB_ID>` (an iframe `id`, `name`, `title`, or matching `src` is accepted).
 3. Re-observe the child context with `snapshot -i --tab-id <TAB_ID>` before filling or clicking.
-4. Perform one child-frame action and verify its child-frame state with `get`, `is`, or `wait`.
-5. Return to the host with `frame main --tab-id <TAB_ID>` before reading host-page state.
+4. If that snapshot contains another `[Iframe]`, read its source with `get attr @eN src`, target a unique descendant URL substring such as `frame "entity.jsf?"`, and snapshot again.
+5. Perform one child-frame action and verify its child-frame state with `get`, `is`, or `wait`.
+6. Return to the host with `frame main --tab-id <TAB_ID>` before reading host-page state.
+
+Frame selection is absolute for the tab, not a relative push into the currently selected frame. Nested same-origin and CDP-visible frames are resolved recursively by id/name/title/src; choose the most specific source substring when parent and child URLs are similar. `frame iframe` normally selects the first matching frame, and `frame main` is a reserved host alias rather than a way to select an iframe whose id is `main`.
 
 Do not assume a host-page selector reaches an iframe. If a child selector returns `null`, establish the frame target and re-observe; for cross-origin frames, report the explicit inaccessible-frame result rather than using JavaScript to bypass it.
 
